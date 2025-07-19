@@ -1,0 +1,47 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 4.37.0"
+    }
+  }
+  required_version = "~> 1.12.2"
+}
+
+provider "azurerm" {
+  features {}
+}
+
+resource "azurerm_resource_group" "demo_rg" {
+  name     = "demo-rg"
+  location = "eastus"
+}
+
+resource "azurerm_virtual_network" "demo_vnet" {
+  name                = "demo-vnet"
+  address_space       = ["10.0.0.0/16"]
+  location            = azurerm_resource_group.demo_rg.location
+  resource_group_name = azurerm_resource_group.demo_rg.name
+}
+
+resource "azurerm_subnet" "demo_subnet" {
+  name                 = "demo-subnet"
+  resource_group_name  = azurerm_resource_group.demo_rg.name
+  virtual_network_name = azurerm_virtual_network.demo_vnet.name
+  address_prefixes     = ["10.0.1.0/24"]
+}
+
+resource "azurerm_storage_account" "demo_storage" {
+  name                     = "demostorage-${random_integer.rand.result}"
+  resource_group_name      = azurerm_resource_group.demo_rg.name
+  location                 = azurerm_resource_group.demo_rg.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+
+  depends_on = [azurerm_resource_group.demo_rg]
+}
+
+resource "random_integer" "rand" {
+  min = 10000
+  max = 99999
+}
