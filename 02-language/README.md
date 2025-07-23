@@ -1,4 +1,4 @@
-# Feature 2: Terraform Configuration Language (HCL)
+# Terraform Configuration Language (HCL)
 
 ## 🌿 What is HCL?
 HCL (HashiCorp Configuration Language) is the language used to write Terraform configurations. It's declarative: you describe what you want, and Terraform handles the rest. HCL is human-readable and structured, supporting:
@@ -60,18 +60,18 @@ upper(var.environment)
 join("-", [var.prefix, var.environment])
 ```
 
-## 🧪 Real-World Demo Update (Expanded HCL)
+## 🧪 Example (HCL)
 Let's expand our Terraform config with a virtual network (VNet) and a subnet inside the VNet.
 
-### ✅ Updated main.tf
+### ✅ main.tf
 ```hcl
 provider "azurerm" {
   features {}
 }
 
 resource "azurerm_resource_group" "demo_rg" {
-  name     = var.resource_group_name
-  location = var.location
+  name     = "demo-rg"
+  location = "eastus"
 }
 
 resource "azurerm_virtual_network" "demo_vnet" {
@@ -86,17 +86,6 @@ resource "azurerm_subnet" "demo_subnet" {
   resource_group_name  = azurerm_resource_group.demo_rg.name
   virtual_network_name = azurerm_virtual_network.demo_vnet.name
   address_prefixes     = ["10.0.1.0/24"]
-}
-```
-
-### ✅ Updated outputs.tf
-```hcl
-output "vnet_name" {
-  value = azurerm_virtual_network.demo_vnet.name
-}
-
-output "subnet_name" {
-  value = azurerm_subnet.demo_subnet.name
 }
 ```
 
@@ -117,3 +106,5 @@ output "subnet_name" {
 - HCL is the language used to define infrastructure in Terraform
 - We used HCL to define a resource group, virtual network, and subnet
 - HCL is clean, readable, and declarative
+
+**[⬅️ Previous](../01-commands/README.md) | [Next ➡️](../03-providers/README.md)**
