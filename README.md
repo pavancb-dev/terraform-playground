@@ -24,8 +24,8 @@ This repository is a **complete, hands-on learning path** for mastering **Terraf
 
 | Concept | Description |
 |--------|-------------|
-| ✅ [Installing Terraform & Azure CLI](./01-setup) | Setup tools and authenticate with Azure |
-| ✅ [Terraform CLI](./02-cli) | Core commands: `init`, `plan`, `apply`, `destroy` |
+| ✅ [Installing Terraform & Azure CLI](./00-setup) | Setup tools and authenticate with Azure |
+| ✅ [Terraform Commands](./01-commands) | Core commands: `init`, `plan`, `apply`, `destroy` |
 | ✅ [Terraform Language (HCL)](./03-language) | Understand syntax, blocks, and structure |
 | ✅ [Providers](./04-providers) | Connect to Azure and other cloud APIs |
 | ✅ [Resources](./05-resources) | Define infrastructure components |

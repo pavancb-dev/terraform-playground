@@ -9,22 +9,8 @@ Terraform is an open-source Infrastructure as Code (IaC) tool by HashiCorp. It l
 - **Automates complex cloud provisioning**
 - **Supports modular, reusable code for scalability**
 
-## 🎯 Real-World Demo Project (Azure)
-We'll build a realistic Azure project, evolving feature-by-feature:
-
-**Project Goal:**
-Provision a basic web application infrastructure on Azure, starting simple and scaling up.
-
-**Eventually, we'll have:**
-- Virtual network (VNet)
-- Subnet
-- Network security group (NSG)
-- Virtual machine (VM) hosting a web server
-- Resource groups, outputs, modules, state management, CI/CD automation, and more
-
-We'll start simple and incrementally enhance it as you learn.
-
-# 🚀 Feature 1: Terraform CLI
+---
+# 🚀 Terraform Commands
 
 ### ✅ What is it?
 The Terraform CLI is the main way to interact with Terraform. It provides commands to:
@@ -41,12 +27,12 @@ The Terraform CLI is the main way to interact with Terraform. It provides comman
 - Removing infrastructure (`terraform destroy`)
 - Debugging and inspecting (`terraform show`, `terraform state`, etc.)
 
-## 📦 Project Setup (Step-by-Step)
-Let's create a working Terraform project on Azure using CLI commands.
+## 📦 Example Setup (Step-by-Step)
+Let's create a working Terraform example on Azure using CLI commands.
 
 ### 📁 1. Folder Structure
 ```
-1-terraform-cli/
+01-commands/
 ├── main.tf
 ```
 
