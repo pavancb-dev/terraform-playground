@@ -76,3 +76,5 @@ terraform destroy
 - Forgetting to run `terraform init` when changing providers/modules
 - Misconfiguring credentials for Azure CLI/authentication
 - Deleting `.terraform` directory manually (removes initialized backend/plugins)
+
+**[⬅️ Previous](../00-setup/README.md) | [Next ➡️](../02-language/README.md)**
