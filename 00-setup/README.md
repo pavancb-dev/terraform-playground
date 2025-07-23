@@ -51,3 +51,5 @@ export ARM_CLIENT_SECRET=<password>
 export ARM_SUBSCRIPTION_ID=<subscriptionId>
 export ARM_TENANT_ID=<tenant>
 ```
+
+**[⬅️ Previous](../README.md) | [Next ➡️](../01-commands/README.md)**
